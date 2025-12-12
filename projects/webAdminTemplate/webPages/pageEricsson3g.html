@@ -1,0 +1,448 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="bb3g">
+    <div class="col-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h5>BB3G</h5>
+        </div>
+        </div>        
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <input type="text" name="BB" placeholder="Введите BB"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listEricsson3g.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.27 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <h5>Hardware part</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Reg
+                        </td>
+                        <td>
+                            BS name
+                        </td>
+                        <td>
+                            Site Name
+                        </td>
+                        <td>
+                            OSS
+                        </td>
+                        <td>
+                            MCC
+                        </td>
+                        <td>
+                            MNC
+                        </td>
+                        <td>
+                            BB Unit
+                        </td>
+                        <td>
+                            BB Port
+                        </td>
+                        <td>
+                            OAM eNodeB
+                        </td>
+                        <td>
+                            OAM Default Router
+                        </td>
+                        <td>
+                            OAM VLAN
+                        </td>
+                        <td>
+                            NTP Frequency Sync Server 1
+                        </td>
+                        <td>
+                            NTP Frequency Sync Server 2
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricsson3g.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Sector
+                        </td>
+                        <td>
+                            RRU Connection Port
+                        </td>
+                        <td>
+                            RRUS
+                        </td>
+                        <td>
+                            TX/RX
+                        </td>
+                        <td>
+                            RfPort<br>
+                            (used antenna output)
+                        </td>
+                        <td>
+                            RfSharing
+                        </td>
+                        <td>
+                            Antenna type
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S1
+                        </td>
+                        <td>
+                            BB Port A
+                        </td>
+                        <td>
+                            RRUS01
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S2
+                        </td>
+                        <td>
+                            BB Port B
+                        </td>
+                        <td>
+                            RRUS01
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S3
+                        </td>
+                        <td>
+                            BB Port C
+                        </td>
+                        <td>
+                            RRUS01
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S4
+                        </td>
+                        <td>
+                            BB Port D
+                        </td>
+                        <td>
+                            Radio22xx
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S5
+                        </td>
+                        <td>
+                            BB Port E
+                        </td>
+                        <td>
+                            Radio22xx
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            S6
+                        </td>
+                        <td>
+                            BB Port F
+                        </td>
+                        <td>
+                            Radio22xx
+                        </td>
+                        <td>
+                            1/2
+                        </td>
+                        <td>
+                            AB
+                        </td>
+                        <td>
+                            false
+                        </td>
+                        <td>
+                            Single
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>3G part</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            RBS ID
+                        </td>
+                        <td>
+                            C/U Plane IP
+                        </td>
+                        <td>
+                            C/U Plane Default Gateway
+                        </td>
+                        <td>
+                            Iub Vlan
+                        </td>
+                        <td>
+                            RNC Name
+                        </td>
+                        <td>
+                            URA
+                        </td>
+                        <td>
+                            LAC
+                        </td>
+                        <td>
+                            RAC
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricsson3g.2 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Used Sectors
+                        </td>
+                        <td>
+                            Sector Name
+                        </td>
+                        <td>
+                            Scrambling Code
+                        </td>
+                        <td>
+                            uarfcnDl
+                        </td>
+                        <td>
+                            SCH delay (tCell)
+                        </td>
+                        <td>
+                            localcellid
+                        </td>
+                        <td>
+                            Power, W
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricsson3g.3 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="bb3g">
+    <div class="col-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h5>Lincense</h5>
+        </div>
+        </div>        
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <input type="text" name="BB" placeholder="Введите BB"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listMain.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.26 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>GSM Configuration</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            cell
+                        </td>
+                        <td>
+                            trx
+                        </td>
+                    </tr>
+                    {% for listIndex in listMain.2 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h5>LTE Configuration</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Sector name
+                        </td>
+                        <td>
+                            Power
+                        </td>
+                        <td>
+                            LTE Bandwidth
+                        </td>
+                    </tr>
+                    {% for listIndex in listMain.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="card">
+        <div class="card-body">
+            <h5>BB License</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            CapacityState
+                        </td>
+                        <td>
+                            description
+                        </td>
+                        <td>
+                            CapacityLevel
+                        </td>
+                        <td>
+                            Capacity
+                        </td>
+                        <td>
+                            Free
+                        </td>
+                    </tr>
+                    {% for listIndex in listMain.3 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

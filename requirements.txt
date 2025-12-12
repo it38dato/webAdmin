@@ -1,0 +1,8 @@
+Django==5.2.5
+
+mysql-connector-python==9.5.0
+
+djangorestframework==3.16.1
+django-ckeditor-5==0.2.18
+pandas==2.2.3
+pyxlsb==1.0.10

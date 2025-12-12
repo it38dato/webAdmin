@@ -1,0 +1,612 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>Start</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <input type="text" name="BB" placeholder="Введите BB"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listEricssonStart.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Имя БС из RDB
+                        </td>
+                        <td>
+                            {{ listIndex.26 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listEricssonStart.1 %} 
+                    <tr>
+                        <td>
+                            Address
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Site type
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Plan
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RDB link
+                        </td>
+                        <td>
+                             <a href="{{ listIndex.7 }}">Link RDB</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Status
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Region
+                        </td>
+                        <td>
+                            {{ listIndex.8 }} / {{ listIndex.9 }} / {{ listIndex.10 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ipPlan
+                        </td>
+                        <td>
+                            <a href="{{ listIndex.11 }}">Link ipPlan</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>RAN data</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listEricssonStart.2 %} 
+                    <tr>
+                        <td>
+                            RNC Name
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BSC Name
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            LAC
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RAC 3G
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            URA
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MCC
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MNC 2G
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>NTP</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listEricssonStart.3 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>Add info</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listEricssonStart.8 %} 
+                    <tr>
+                        <td>
+                            2G
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3G
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4G
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mocn
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <h5>IP_Plan_Line_1</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            OAM 2G/TCU
+                        </td>
+                        <td>
+                            OAM 3G
+                        </td>
+                        <td>
+                            OAM 4G
+                        </td>
+                        <td>
+                            ABIS
+                        </td>
+                        <td>
+                            IUB
+                        </td>
+                        <td>
+                            S1
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricssonStart.4 %}
+                    <tr>
+                        <td>
+                            Port
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            GW
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            VLAN
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.16 }}
+                        </td>
+                        <td>
+                            {{ listIndex.17 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>DU data</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            DU Name
+                        </td>
+                        <td>
+                            OAM
+                        </td>
+                        <td>
+                            Link
+                        </td>
+                        <td>
+                            EthernetPort
+                        </td>
+                        <td>
+                            OperatingMode
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricssonStart.5 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }} 
+                        </td>
+                        <td>
+                            {{ listIndex.1 }} 
+                        </td>
+                        <td>
+                            <a href="https://{{ listIndex.1 }}">https://{{ listIndex.1 }} </a>
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }} 
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% for listIndex in listEricssonStart.6 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            <a href="ssh://{{ listIndex.1 }}">ssh://{{ listIndex.1 }}</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>DU HW data</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            DU
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricssonStart.9 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.5 }} 
+                        </td>
+                        <td>
+                            {{ listIndex.4 }} 
+                        </td>
+                        <td>
+                            {{ listIndex.0 }} 
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }} 
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div>
+        <div class="card">
+        <div class="card-body">
+            <h5>BB HW data</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            BS Name
+                        </td>
+                        <td>
+                            BB-1
+                        </td>
+                        <td>
+                            A
+                        </td>
+                        <td>
+                            B
+                        </td>
+                        <td>
+                            C
+                        </td>
+                        <td>
+                            D
+                        </td>
+                        <td>
+                            E
+                        </td>
+                        <td>
+                            F
+                        </td>
+                        <td>
+                            G
+                        </td>
+                        <td>
+                            H
+                        </td>
+                        <td>
+                            J
+                        </td>
+                        <td>
+                            K
+                        </td>
+                        <td>
+                            L
+                        </td>
+                        <td>
+                            M
+                        </td>
+                        <td>
+                            N
+                        </td>
+                        <td>
+                            P
+                        </td>
+                        <td>
+                            Q
+                        </td>
+                    </tr>
+                    {% for listIndex in listEricssonStart.7 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.16 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

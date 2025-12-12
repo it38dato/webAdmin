@@ -1,0 +1,579 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>2G</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokia2g.0 %}
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>Спутниковые PCU</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            BSC
+                        </td>
+                        <td>
+                            PCU INDEX
+                        </td>
+                        <td>
+                            ETME
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK135
+                        </td>
+                        <td>
+                            17
+                        </td>
+                        <td>
+                            0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK148
+                        </td>
+                        <td>
+                            11
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK148
+                        </td>
+                        <td>
+                            21
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK148
+                        </td>
+                        <td>
+                            33
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK169
+                        </td>
+                        <td>
+                            26
+                        </td>
+                        <td>
+                            0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK395
+                        </td>
+                        <td>
+                            25
+                        </td>
+                        <td>
+                            7
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            IRK484
+                        </td>
+                        <td>
+                            21
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            BSC
+                        </td>
+                        <td>
+                            BCSU
+                        </td>
+                        <td>
+                            PCU
+                        </td>
+                        <td>
+                            ETPE
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BIR067
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MGD069
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MGD069
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            12
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MGD069
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            12
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            KAM070
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SAH068
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            12
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            KHB173
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            KHB174
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NSK042
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            name
+                        </td>
+                        <td>
+                            bsc
+                        </td>
+                        <td>
+                            Subtype
+                        </td>
+                        <td>
+                            bcf
+                        </td>
+                        <td>
+                            BtsIp
+                        </td>
+                        <td>
+                            OmuSig
+                        </td>
+                        <td>
+                            synch
+                        </td>
+                        <td>
+                            clockSource
+                        </td>
+                        <td>
+                            Satellite
+                        </td>
+                        <td>
+                            lapd
+                        </td>
+                        <td>
+                            SBTSId
+                        </td>
+                        <td>
+                            bts
+                        </td>
+                        <td>
+                            sectorId
+                        </td>
+                        <td>
+                            lac
+                        </td>
+                        <td>
+                            rac
+                        </td>
+                        <td>
+                            bcc
+                        </td>
+                        <td>
+                            ncc
+                        </td>
+                        <td>
+                            band
+                        </td>
+                        <td>
+                            bcch
+                        </td>
+                        <td>
+                            hop
+                        </td>
+                        <td>
+                            mal
+                        </td>
+                        <td>
+                            hsn
+                        </td>
+                        <td>
+                            diversity
+                        </td>
+                        <td>
+                            cMax
+                        </td>
+                        <td>
+                            State
+                        </td>
+                        <td>
+                            $dn
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokia2g.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.16 }}
+                        </td>
+                        <td>
+                            {{ listIndex.17 }}
+                        </td>
+                        <td>
+                            {{ listIndex.18 }}
+                        </td>
+                        <td>
+                            {{ listIndex.19 }}
+                        </td>
+                        <td>
+                            {{ listIndex.20 }}
+                        </td>
+                        <td>
+                            {{ listIndex.21 }}
+                        </td>
+                        <td>
+                            {{ listIndex.22 }}
+                        </td>
+                        <td>
+                            {{ listIndex.23 }}
+                        </td>
+                        <td>
+                            {{ listIndex.24 }}
+                        </td>
+                        <td>
+                            {{ listIndex.25 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            name
+                        </td>
+                        <td>
+                            Set SATELL
+                        </td>
+                        <td>
+                            Set RDIV=N
+                        </td>
+                        <td>
+                            Set GENA=Y
+                        </td>
+                        <td>
+                            CMAX=100
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokia2g.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.26 }}
+                        </td>
+                        <td>
+                            {{ listIndex.27 }}
+                        </td>
+                        <td>
+                            {{ listIndex.28 }}
+                        </td>
+                        <td>
+                            {{ listIndex.29 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>Mrbts Sctp Parameters</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            sctpMaxRetransAssoc
+                        </td>
+                        <td>
+                            sctpMaxRetransPath
+                        </td>
+                        <td>
+                            sctpRtoInit
+                        </td>
+                        <td>
+                            sctpRtoMax
+                        </td>
+                        <td>
+                            sctpRtoMin
+                        </td>
+                        <td>
+                            sctpSackPeriod
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokia2g.2 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

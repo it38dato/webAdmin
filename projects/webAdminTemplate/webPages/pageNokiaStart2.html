@@ -1,0 +1,545 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>Start</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaStart2.0 %} 
+                    <tr>
+                        <td>
+                            Регион
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Имя БС из RDB
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaStart2.2 %} 
+                    <tr>
+                        <td>
+                            Address
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Site type
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Plan
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Satatus
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RDB link
+                        </td>
+                        <td>
+                            <a href="{{ listIndex.7 }}">Rdb Link</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Region
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ipPlan
+                        </td>
+                        <td>
+                            <a href="{{ listIndex.11 }}">Ip Link</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h5>RAN data</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaStart2.3 %} 
+                    <tr>
+                        <td>
+                            rnc
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            bsc
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            lac
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            rac3g
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ura
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h5>Add info</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaStart2.4 %} 
+                    <tr>
+                        <td>{{ listIndex.0 }}</td>
+                        <td>{{ listIndex.1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div>
+        <div class="card">
+        <div class="card-body">
+            <h5>connectionMap</h5>
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaStart2.6 %} 
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            firstEndpoint
+                        </td>
+                        <td>
+                            secondEndpoint
+                        </td>
+                        <td>
+                            snSecondEndpoint
+                        </td>
+                        <td>
+                            cellList
+                        </td>
+                        <td>
+                            linkCapacity
+                        </td>
+                        <td>
+                            fiberLength
+                        </td>
+                        <td>
+                            firstEndpoint
+                        </td>
+                        <td>
+                            secondEndpoint
+                        </td>
+                        <td>
+                            snSecondEndpoint
+                        </td>
+                        <td>
+                            cellList
+                        </td>
+                        <td>
+                            linkCapacity
+                        </td>
+                        <td>
+                            fiberLength
+                        </td>
+                        <td>
+                            firstEndpoint
+                        </td>
+                        <td>
+                            secondEndpoint
+                        </td>
+                        <td>
+                            snSecondEndpoint
+                        </td>
+                        <td>
+                            cellList
+                        </td>
+                        <td>
+                            linkCapacity
+                        </td>
+                        <td>
+                            fiberLength
+                        </td>
+                        <td>
+                            firstEndpoint
+                        </td>
+                        <td>
+                            secondEndpoint
+                        </td>
+                        <td>
+                            snSecondEndpoint
+                        </td>
+                        <td>
+                            cellList
+                        </td>
+                        <td>
+                            linkCapacity
+                        </td>
+                        <td>
+                            fiberLength
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaStart2.1 %} 
+                     <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.17 }}
+                        </td>
+                        <td>
+                            {{ listIndex.18 }}
+                        </td>
+                        <td>
+                            {{ listIndex.19 }}
+                        </td>
+                        <td>
+                            {{ listIndex.20 }}
+                        </td>
+                        <td>
+                            {{ listIndex.21 }}
+                        </td>
+                        <td>
+                            {{ listIndex.23 }}
+                        </td>
+                        <td>
+                            {{ listIndex.24 }}
+                        </td>
+                        <td>
+                            {{ listIndex.25 }}
+                        </td>
+                        <td>
+                            {{ listIndex.26 }}
+                        </td>
+                        <td>
+                            {{ listIndex.27 }}
+                        </td>
+                        <td>
+                            {{ listIndex.28 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <h5>DU Name</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            mrbts
+                        </td>
+                        <td>
+                            oam
+                        </td>
+                        <td>
+                            http
+                        </td>
+                        <td>
+                            connectorLabel
+                        </td>
+                        <td>
+                            detectedSpeed
+                        </td>
+                        <td style="width:46pt;">
+                            RanSharing
+                        </td>
+                        <td>
+                            dn
+                        </td>
+                        <td>
+                            getRet
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaStart2.5 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            <a href="http://{{ listIndex.1 }}">http://{{ listIndex.1 }}</a>
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

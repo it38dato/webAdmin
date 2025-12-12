@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="4g">
+    <div class="col-6 col-md-3">
+        <h3>4G</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokia4g.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Site name
+                        </td>
+                        <td>
+                            System module name
+                        </td>
+                        <td>
+                            Pmax
+                        </td>
+                        <td>
+                            Bw
+                        </td>
+                        <td>
+                            CID
+                        </td>
+                        <td>
+                            earfcnDL
+                        </td>
+                        <td>
+                            PCI
+                        </td>
+                        <td>
+                            PRACH
+                        </td>
+                        <td>
+                            CellRange
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 0
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 1
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 2
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 3
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 4
+                        </td>
+                        <td>
+                            LNHOIF / IRFIM instance 5
+                        </td>
+                        <td>
+                            tac
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokia4g.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            name
+                        </td>
+                        <td>
+                            eci
+                        </td>
+                        <td>
+                            mimo
+                        </td>
+                        <td>
+                            State
+                        </td>
+                        <td>
+                            $dn
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokia4g.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.16 }}
+                        </td>
+                        <td>
+                            {{ listIndex.17 }}
+                        </td>
+                        <td>
+                            {{ listIndex.18 }}
+                        </td>
+                        <td>
+                            {{ listIndex.19 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

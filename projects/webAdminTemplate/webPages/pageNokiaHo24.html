@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>HO24</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                   {% for listIndex in listNokiaHo24.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            cell
+                        </td>
+                        <td>
+                            dn
+                        </td>
+                        <td>
+                            eArfcn
+                        </td>
+                        <td>
+                            tac
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaHo24.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE raml SYSTEM 'raml20.dtd'&gt;&lt;raml version="2.0" xmlns="raml20.xsd"&gt;&lt;cmData type="plan" scope="all" name="" id=""&gt;&lt;header&gt;&lt;log dateTime="" action="created" appInfo="PlanExporter"&gt;UIValues are used&lt;/log&gt;&lt;/header&gt;
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaHo24.1 %} 
+                    <tr>
+                        <td>
+                        <p>
+                            <span>&lt;</span><span>managedObject</span><span> </span><span>class</span><span>=</span><span>"ADJL"</span><span> </span><span>version</span><span>=</span><span>"BSCFP21B"</span><span> </span><span>distName</span><span>=</span><span>"{{ listIndex.1 }}/ADJL-2"</span><span> </span><span>id</span><span>=</span><span>""</span><span> </span><span>operation</span><span>=</span><span>"create"</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"barredLteAdjCellGroup"</span><span>&gt;</span><span>0</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"barredLteAdjCellPattern"</span><span>&gt;</span><span>Not Used</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"barredLteAdjCellPatternSense"</span><span>&gt;</span><span>Equal</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"earfcn"</span><span>&gt;</span><span>{{ listIndex.3 }}</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"extOpId"</span><span>&gt;</span><span>Own operator</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellMcc"</span><span>&gt;</span><span>250</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellMinBand"</span><span>&gt;</span><span>6</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellMinRxLevel"</span><span>&gt;</span><span>-140</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellMnc"</span><span>&gt;</span><span>20</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellPriority"</span><span>&gt;</span><span>4</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellReselectLowerThr"</span><span>&gt;</span><span>30</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellReselectUpperThr"</span><span>&gt;</span><span>30</span><span>&lt;/</span><span>p</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"lteAdjCellTac"</span><span>&gt;</span><span>{{ listIndex.2 }}</span><span>&lt;/</span><span>p</span><span>&gt;&lt;/</span><span>managedObject</span><span>&gt;</span>
+                        </p>
+                        </td>                
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>
+                            &lt;/cmData&gt;&lt;/raml&gt;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

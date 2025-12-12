@@ -1,0 +1,521 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>2G</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <input type="text" name="Trx" placeholder="Введите название TRX"><br>
+                <input type="text" name="NCell" placeholder="Введите Ncell"><br>
+                <input type="text" name="BCXU" placeholder="Введите BCXU ID"><br>
+                <input type="text" name="Profile" placeholder="Введите Profile"><br>
+                <input type="text" name="TrxNumber" placeholder="Введите Trx Number"><br>
+                <input type="text" name="TrxFreq" placeholder="Введите Trx Freq"><br>
+                <input type="text" name="Trx0" placeholder="Введите Trx 0"><br>
+                <input type="text" name="Trx1" placeholder="Введите Trx 1"><br>
+                <input type="text" name="Trx2" placeholder="Введите Trx 2"><br>
+                <input type="text" name="Trx3" placeholder="Введите Trx 3"><br>
+                <input type="text" name="Trx4" placeholder="Введите Trx 4"><br>
+                <input type="text" name="Trx5" placeholder="Введите Trx 5"><br>
+                <input type="text" name="Trx6" placeholder="Введите Trx 6"><br>
+                <input type="text" name="Trx7" placeholder="Введите Trx 7"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaTrx.3 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.0 }}
+                        </td>
+                        <td>
+                            {{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaTrx.3 %}
+                    <tr>
+                        <td>
+                            BCXU ID
+                        </td>
+                        <td>
+                            ZEEI:BCF={{ listIndex.2 }};
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SOURCE IP
+                        </td>
+                        <td>
+                            ZQRI:BCXU,{{ listIndex.3 }};
+                        </td>
+                        <td>
+                            {{ listIndex.4 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Profile
+                        </td>
+                        <td>
+                            ZOYO:NAME={{ listIndex.5 }};
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            nwName
+                        </td>
+                        <td>
+                            bsc
+                        </td>
+                        <td>
+                            bcf
+                        </td>
+                        <td>
+                            bts
+                        </td>
+                        <td>
+                            ip
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaTrx.3 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.7 }}
+                        </td>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.8 }}
+                        </td>
+                        <td>
+                            {{ listIndex.9 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <h5>TRX</h5>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Trx Number
+                        </td>
+                        <td>
+                            Cell Name
+                        </td>
+                        <td>
+                            Trx Name
+                        </td>
+                        <td>
+                            Trx Freq
+                        </td>
+                        <td>
+                            Tsc
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            7
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaTrx.3 %}
+                    <tr>
+                        <td>
+                            {{ listIndex.10 }}
+                        </td>
+                        <td>
+                            {{ listIndex.6 }}
+                        </td>
+                        <td>
+                            {{ listIndex.11 }}
+                        </td>
+                        <td>
+                            {{ listIndex.12 }}
+                        </td>
+                        <td>
+                            {{ listIndex.13 }}
+                        </td>
+                        <td>
+                            {{ listIndex.14 }}
+                        </td>
+                        <td>
+                            {{ listIndex.15 }}
+                        </td>
+                        <td>
+                            {{ listIndex.16 }}
+                        </td>
+                        <td>
+                            {{ listIndex.17 }}
+                        </td>
+                        <td>
+                            {{ listIndex.18 }}
+                        </td>
+                        <td>
+                            {{ listIndex.19 }}
+                        </td>
+                        <td>
+                            {{ listIndex.20 }}
+                        </td>
+                        <td>
+                            {{ listIndex.21 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Trx Number
+                        </td>
+                        <td>
+                            Cell Name
+                        </td>
+                        <td>
+                            Trx Name
+                        </td>
+                        <td>
+                            Trx Freq
+                        </td>
+                        <td>
+                            Tsc
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            7
+                        </td>
+                        <td>
+                            power
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            State
+                        </td>
+                        <td>
+                            Set SATELL
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaTrx.2 %}
+                    <tr>
+                        <td>
+                        {{ listIndex.0 }}
+                        </td>
+                        <td>
+                        {{ listIndex.1 }}
+                        </td>
+                        <td>
+                        {{ listIndex.2 }}
+                        </td>
+                        <td>
+                        {{ listIndex.3 }}
+                        </td>
+                        <td>
+                        {{ listIndex.4 }}
+                        </td>
+                        <td>
+                        {{ listIndex.5 }}
+                        </td>
+                        <td>
+                        {{ listIndex.6 }}
+                        </td>
+                        <td>
+                        {{ listIndex.7 }}
+                        </td>
+                        <td>
+                        {{ listIndex.8 }}
+                        </td>
+                        <td>
+                        {{ listIndex.9 }}
+                        </td>
+                        <td>
+                        {{ listIndex.10 }}
+                        </td>
+                        <td>
+                        {{ listIndex.11 }}
+                        </td>
+                        <td>
+                        {{ listIndex.12 }}
+                        </td>
+                        <td>
+                        {{ listIndex.13 }}
+                        </td>
+                        <td>
+                        {{ listIndex.16 }}
+                        </td>
+                        <td>
+                        {{ listIndex.15 }}
+                        </td>
+                        <td>
+                        {{ listIndex.17 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Trx Add
+                        </td>
+                        <td>
+                            Trx Del
+                        </td>
+                        <td>
+                            Add Freq Hop
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaTrx.3 %}
+                    <tr>
+                        <td>
+                        ZEQS:BTS={{ listIndex.8 }}:L::;
+                        </td>
+                        <td>
+                        ZEQS:BTS={{ listIndex.8 }}:L::;
+                        </td>
+                        <td>
+                        ZEQO:BTS={{ listIndex.8 }}:HOP;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZOYX:{{ listIndex.11 }}:IUA:S:BCXU,{{ listIndex.3 }}:{{ listIndex.5 }};
+                        </td>
+                        <td>
+                        ZERS:BTS={{ listIndex.8 }},TRX={{ listIndex.10 }}:L;
+                        </td>
+                        <td>
+                        ZEBI:MAL,O{{ listIndex.2 }};
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZOYP:IUA:{{ listIndex.11 }}:"{{ listIndex.4 }}",,{{ listIndex.22 }}+:"{{ listIndex.9 }}",30,,,{{ listIndex.22 }};
+                        </td>
+                        <td>
+                        ZERD:BTS={{ listIndex.2 }},TRX={{ listIndex.10 }};
+                        </td>
+                        <td>
+                        ZEBT:MAL,O{{ listIndex.8 }}:A:FREQ={{ listIndex.12 }};
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZDWP:{{ listIndex.11 }}:BCXU,{{ listIndex.3 }}:0,{{ listIndex.10 }}:{{ listIndex.11 }};
+                        </td>
+                        <td>
+                        ZOYS:IUA:{{ listIndex.11 }}:DOWN;
+                        </td>
+                        <td>
+                        ZEQS:BTS={{ listIndex.8 }}:U;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZOYS:IUA:{{ listIndex.11 }}:ACT;
+                        </td>
+                        <td>
+                        ZDWD:{{ listIndex.11 }};
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZOYS:IUA:{{ listIndex.11 }}:ACT;
+                        </td>
+                        <td>
+                        ZOYY:IUA:{{ listIndex.11 }}:;
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZERC:BTS={{ listIndex.8 }},TRX={{ listIndex.10 }}::FREQ={{ listIndex.12 }},TSC={{ listIndex.13 }},:DNAME={{ listIndex.11 }}:CH0={{ listIndex.14 }},CH1={{ listIndex.15 }},CH2={{ listIndex.16 }},CH3={{ listIndex.17 }},CH4={{ listIndex.18 }},CH5={{ listIndex.19 }},CH6={{ listIndex.20 }},CH7={{ listIndex.21 }}:;
+                        </td>
+                        <td>
+                        ZEQS:BTS={{ listIndex.8 }}:U;
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZERM:BTS={{ listIndex.8 }},TRX={{ listIndex.10 }}:LEV=-91;
+                        </td>
+                        <td>
+                        
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZERM:BTS={{ listIndex.8 }},TRX={{ listIndex.10 }}:PREF=N;
+                        </td>
+                        <td>
+                        
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZERS:BTS={{ listIndex.8 }},TRX={{ listIndex.10 }}:U;
+                        </td>
+                        <td>
+                        
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        ZEQS:BTS={{ listIndex.8 }}:U;
+                        </td>
+                        <td>
+                        
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

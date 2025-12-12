@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Первый HTML-сегмент -->
+<div class="row g-0 text-center" id="Start">
+    <div class="col-6 col-md-3">
+        <h3>Ssh</h3>
+        <div class="card">
+        <div class="card-body">
+            <h5>Введите Имя БС:</h5>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="Reg" placeholder="Введите регион"><br>
+                <input type="text" name="NS" placeholder="Введите номерБС"><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                   {% for listIndex in listNokiaSsh.0 %} 
+                    <tr>
+                        <td>
+                            Имя БС
+                        </td>
+                        <td>
+                            {{ listIndex.5 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaSsh.2 %} 
+                    <tr>
+                        <td>
+                            Login
+                        </td>
+                        <td>
+                            toor4nsn
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pass
+                        </td>
+                        <td>
+                            oZPS0POrRieRtu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ping Abis
+                        </td>
+                        <td>
+                            ping -s 1472 -c 100 -Mdo {{ listIndex.0 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ping S1
+                        </td>
+                        <td>
+                            ping -s 1472 -c 100 -Mdo 10.222.1.12
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Traceroute Abis
+                        </td>
+                        <td>
+                            traceroute&nbsp; {{ listIndex.0 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Traceroute S1
+                        </td>
+                        <td>
+                            traceroute 10.222.1.12
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            systemAcctPermEnable
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            actServiceAccountSsh
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            duName
+                        </td>
+                        <td>
+                            dn
+                        </td>
+                        <td>
+                            sshLink
+                        </td>
+                    </tr>
+                    {% for listIndex in listNokiaSsh.1 %} 
+                    <tr>
+                        <td>
+                            {{ listIndex.2 }}
+                        </td>
+                        <td>
+                            {{ listIndex.3 }}
+                        </td>
+                        <td>
+                            ssh://{{ listIndex.1 }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    {% for listIndex in listNokiaSsh.1 %} 
+                    <tr>
+                        <td>
+                            <p>
+                                <span>&lt;?</span><span>xml</span><span> </span><span>version</span><span>=</span><span>"1.0"</span><span> </span><span>encoding</span><span>=</span><span>"UTF-8"</span><span>?&gt;&lt;!</span><span>DOCTYPE</span><span> </span><span>raml</span><span> </span><span>SYSTEM</span><span> </span><span>'raml20.dtd'</span><span>&gt;&lt;</span><span>raml</span><span> </span><span>version</span><span>=</span><span>"2.0"</span><span> </span><span>xmlns</span><span>=</span><span>"raml20.xsd"</span><span>&gt;&lt;</span><span>cmData</span><span> </span><span>type</span><span>=</span><span>"plan"</span><span> </span><span>scope</span><span>=</span><span>"all"</span><span> </span><span>name</span><span>=</span><span>""</span><span> </span><span>id</span><span>=</span><span>""</span><span>&gt;&lt;</span><span>header</span><span>&gt;&lt;</span><span>log</span><span> </span><span>dateTime</span><span>=</span><span>""</span><span> </span><span>action</span><span>=</span><span>"created"</span><span> </span><span>appInfo</span><span>=</span><span>"PlanExporter"</span><span>&gt;</span><span>UIValues are used</span><span>&lt;/</span><span>log</span><span>&gt;&lt;/</span><span>header</span><span>&gt;&lt;</span><span>managedObject</span><span> </span><span>class</span><span>=</span><span>"FEATCADM"</span><span> </span><span>version</span><span>=</span><span>"MNL21B_2105_002"</span><span> </span><span>distName</span><span>=</span><span>"{{ listIndex.3 }}/MNL-1/MNLENT-1/FEATCADM-1"</span><span> </span><span>id</span><span>=</span><span>""</span><span> </span><span>operation</span><span>=</span><span>"update"</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"systemAcctPermEnable"</span><span>&gt;</span><span>false</span><span>&lt;/</span><span>p</span><span>&gt;&lt;/</span><span>managedObject</span><span>&gt;&lt;</span><span>managedObject</span><span> </span><span>class</span><span>=</span><span>"SECADM"</span><span> </span><span>version</span><span>=</span><span>"MNL21B_2105_002"</span><span> </span><span>distName</span><span>=</span><span>"{{ listIndex.3 }}/MNL-1/MNLENT-1/SECADM-1"</span><span> </span><span>id</span><span>=</span><span>""</span><span> </span><span>operation</span><span>=</span><span>"update"</span><span>&gt;&lt;</span><span>p</span><span> </span><span>name</span><span>=</span><span>"actServiceAccountSsh"</span><span>&gt;</span><span>true</span><span>&lt;/</span><span>p</span><span>&gt;&lt;/</span><span>managedObject</span><span>&gt;&lt;/</span><span>cmData</span><span>&gt;&lt;/</span><span>raml</span><span>&gt;</span>
+                            </p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% for j_key, j_value in jsonContents.items %} 
+<div class="row g-0 text-center" id="{{ j_key }}">
+    <div class="col-6 col-md-3">
+        <h3>{{ j_key }}</h3>
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">
+            {% if item.idcard == 'MiniCard' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-9">
+        <div class="card">
+        {% for item in j_value %}
+        <div class="card-body">   
+            {% if item.idcard == 'Card' %}
+            <h5>{{ item.title|safe }}</h5>
+            <p>{{ item.content|safe }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
