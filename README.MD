@@ -67,13 +67,8 @@ CREATE DATABASE your\_database\_name CHARACTER SET utf8mb4 COLLATE utf8mb4\_unic
 
 DATABASES = { 'default': { 'ENGINE': 'mysql.connector.django', 'NAME': 'your\_database\_name', 'USER': 'your\_user', 'PASSWORD': 'your\_password', 'HOST': 'localhost', 'PORT': '3306', 'OPTIONS': { 'init\_command': "SET sql\_mode='STRICT\_TRANS\_TABLES'", 'charset': 'utf8mb4', 'use\_unicode': True, } } }
 
-* Миграция данных SQLite → MySQL Экспорт данных:
-
-importDjangoSql1.bat
-
-* Миграция данных SQLite → MySQL Импорт в MySQL:
-
-importDjangoSql2.bat
+* Миграция данных SQLite → MySQL Экспорт данных: importDjangoSql1.bat
+* Миграция данных SQLite → MySQL Импорт в MySQL: importDjangoSql2.bat
 
 🐧 Миграция проекта (Linux)
 
