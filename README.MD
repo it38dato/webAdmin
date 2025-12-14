@@ -10,7 +10,7 @@
 
 --- ### 2. Проверка Python Запустить: 
 
-```bat checkPython.bat
+```bat checkPython.bat```
 
 Скрипт проверяет наличие Python в системе.
 
