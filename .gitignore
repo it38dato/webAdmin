@@ -1,1 +1,7 @@
 backups/
+projects/webAdminDato38it
+projects/dato138it/.env
+projects/dato138it/Config/dato138it.conf
+projects/dato138it/Config/db/datadump.json
+projects/dato138it/Config/db/datamysql.sql
+projects/dato138it/Config/db/datapsql.dump 

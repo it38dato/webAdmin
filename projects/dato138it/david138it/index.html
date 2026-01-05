@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>dato38it</title>
+</head>
+<body>
+    <div class="container">
+        {% if content.count > 0 %}
+        <div class="container-left">
+            <h2>Resume</h2>
+            <p>
+                <strong>Обратная связь:</strong><br> почта - it38dato@yandex.ru, телеграмм - @it38dato.<br>
+            </p>
+                <p style="cursor: pointer;" onclick="card__hidden(this)">Show more</p>
+                <div style="display:none;" style=&{head};>
+                    <p>
+                        <strong>Обо мне</strong><br>Инженер-программист, г. Иркутск. Я специалист в области информационных технологий с более 5 лет опыта в администрировании баз данных, локальных, виртуальных и облачных серверов и в разработке программного обеспечения. Для саморазвития я в свободное время читаю и перевожу техническую документацию на английском языке, администрирую свой веб-сервер http://dato138it.ru, дорабатываю свои проекты https://github.com/it38dato и решаю задачи на фрилансе. Мне интересно работать в команде, активно развиваться в программировании и администрировании, изучать новые технологии.<br>
+                        <strong>Навыки:</strong><br>Html, Css, Js, Спутниковые радионавигационные системы, С++, Виртуализация, Linux, Bash, Windows, Python, English, Sql, Clouds, Docker, Ericsson, Nokia, Vba.<br>
+                        <strong>Услуги:</strong><br>
+                        # Верстка Веб-страниц.<br>
+                        # Разработка Парсинг данных.<br>
+                        # Анализ сетевых технологий.<br>
+                        # Администрирование локальных серверов.<br>
+                        # Администрирование виртуальных серверов.<br>
+                        # Администрирование локальных сетей.<br>
+                        # Администрирование Веб-серверов.<br>
+                        # Разработка Автоматизация установки и настройки ПО.<br>
+                        # Разработка Восстановление флешки.<br>
+                        # Написание Sql запросов.<br>
+                        # Администрирование баз данных.<br>
+                        # Разработка баз данных.<br>
+                        # Разработка Бэкап.
+                    </p>
+                </div>
+
+        </div>
+        <div class="container-right">
+            {% for portfolio in content %}
+            <div class="card__content">
+                <p>
+                    <strong>{{portfolio.begin|safe}} - {{portfolio.finish|safe}}:</strong> {{portfolio.location|safe}}
+                    <strong>Должность:</strong> {{portfolio.specialization|safe}}
+                    <strong>Достижения:</strong> {{portfolio.progress|safe}}
+                    <strong>Дополнительная информация:</strong> {{portfolio.responsibilities|safe}}
+                </p>
+                <p style="cursor: pointer;" onclick="card__hidden(this)">Show more</p>
+                <div style="display:none;" style=&{head};>{{portfolio.description|safe}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

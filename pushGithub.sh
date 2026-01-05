@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git status
+
 # Запрос сообщения коммита у пользователя
 echo "Введите сообщение коммита:"
 read commit_message

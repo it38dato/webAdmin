@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>dato38it</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header fixed" id="header">
+        <div class="container">
+            <div class="header__nav">
+                <p><a href="#aboutMe">Обо мне</a></p>
+                <p><a href="#experience">Опыт работы</a></p>
+            </div>
+        </div>
+    </header>
+    <!--SECTIONS CARDS-->
+    <section>
+        <div class="container">
+            {% if content.count > 0 %}
+            <div class="cards">
+                <div class="card__content" id="page__fixed">
+                    <h2 class="card_hidden" id="aboutMe" onclick="card__hidden(this)">Обо мне</h2>
+                    <div style="display:none; text-align:left; &{head};">
+			    <p>
+			    <strong>Инженер-программист:</strong> г. Иркутск. Я специалист в области информационных технологий. У меня более 5 лет опыта в администрировании серверов различных ОС и в разработки скриптов, ПО и БД. Для саморазвития я в свободное время читаю и перевожу техническую документацию на английском языке, администрирую свой веб-сервер и дорабатываю свои проекты <a href="https://github.com/it38dato">https://github.com/it38dato</a>. Мне интересно работать в команде, активно развиваться в программировании и изучать новые технологии.<br>
+    				<strong>Навыки:</strong> Html, Css, Windows, Виртуализация, Linux, Sql, Bash, Clouds, Python, English, Etl-процессы, Dwh, AntiFraud, Спутниковые радионавигационные системы, С++.<br>
+    				<strong>Обратная связь:</strong> it38dato@yandex.ru, telegram - @it38dato.<br>
+			    	<strong>Услуги:</strong><br>
+				# Верстка Веб-страниц по макетам.<br>
+				# Администрирование локальных, виртуальных и облачных серверов.<br>
+				# Администрирование Веб-сервера Lamp.<br>
+				# Администрирование Веб-сервера Django.<br>
+				# Администрирование Веб-сервера React.js.<br>
+				# Администрирование базы данных.<br>
+				# Разработка Веб-сайта Django.<br>
+				# Разработка Веб-сайта React.js.<br>
+				# Разработка Телеграм бота Переводчик.<br>
+				# Разработка базы данных.<br>
+				# Разработка Хранилище данных.<br>
+				# Написание Sql запросов.<br>
+				# Обработка и сортировка данных на Python, C++ и Sql-запросах.<br>
+				# Анализ сетевых технологий.
+			 </p>
+		    </div>
+                </div>
+                {% for portfolio in content %}
+                <div class="card__content" id="experience" style="text-align: left;">           
+			<p>
+				<strong>{{portfolio.begin|safe}} - {{portfolio.finish|safe}}:</strong> {{portfolio.location|safe}}
+				<strong>Должность:</strong> {{portfolio.specialization|safe}}
+				<strong>Дополнительная информация:</strong> {{portfolio.responsibilities|safe}}
+				<strong>Достижения:</strong> {{portfolio.progress|safe}}
+			</p>
+                    <p class="card_hidden" onclick="card__hidden(this)">Show</p>
+                    <div style="display:none;" style=&{head};>{{portfolio.description|safe}}</div>
+                </div>
+                {% endfor %}
+            </div> 
+            {% endif %}
+        </div>
+    </section> 
+    <!-- JS -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

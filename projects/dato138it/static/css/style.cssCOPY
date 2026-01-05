@@ -1,0 +1,225 @@
+body{
+	margin: 0;
+	font-size: 20px;
+}
+p{
+	color: black;
+}
+a{
+    color: grey;
+}
+h1{
+	text-align: center;
+	font-size: 50px;
+}
+h3{
+    text-align: center;
+}
+header{
+	background-color: black;
+}
+section {
+    padding: 50px 0 0 0;
+}
+
+table,td {
+    border: 1px solid black;
+}
+.container{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.information{
+	text-align: center;
+}
+.header.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header__nav p {
+    color: white;
+}
+.header__logo {
+    text-decoration: none;
+    color: white;
+}
+.cards{
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+.card{
+	min-height: 100px;
+	margin: 0 10px 20px;
+	flex: 1 1 calc(33.33% - 20px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0 0 5px black;
+}
+.card__content{
+    padding: 0 20px;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+   	margin: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+.card:hover {
+    box-shadow: 0 0 20px black;
+}
+.cards__hide{
+    display:none;
+}
+.card__nav {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.card__img{
+	flex-basis: 29%;
+	padding: 0 0 20px 0;
+	text-align: center;
+	box-shadow: 0 0 5px black;
+	margin: 20px;
+    display: grid;
+}
+.card__img img{
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+.card_hidden{
+    cursor: pointer; 
+    /*text-decoration: underline;24.04.22*/
+}
+.card_hidden:hover{
+	text-decoration: none;
+    color: grey;
+}
+.card__content img {
+    width: 50%;
+}
+.card__formula{
+    width: 50%;
+}
+/*modal*/
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(57, 57, 57, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.modal.show {
+    display: flex;
+}
+.modal__dialog {
+    width: 100%;
+    position: relative;
+}
+.modal__inner{
+    display: flex;
+}
+.modal__col{
+    padding: 20px;
+    width: 50%;
+    background-color: white;
+}
+.modal__col img {
+    width: 100%;
+}
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform .2s linear;
+    font-size: 20px;
+    background: white;
+	padding: 10px;
+}
+.modal__close:hover {
+    transform: translateY(-3px);
+}
+body.modal__noscroll {
+    overflow: hidden;
+}
+/*adapter*/
+.button {
+    padding: 20px 40px;
+    box-shadow: 0 0 5px black;
+    margin: 0 110px;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: black;
+    color: white;
+}
+.button__next{
+    width: 100%;
+}
+.button__preview{
+    width: 100%;
+    text-align: right;
+}
+.button__adapter{
+    display: flex;
+    margin: 40px 0;
+}
+
+@media (max-width: 991px){
+    .modal__col{
+        width: 100%;
+        overflow: hidden;
+    }
+    .modal__inner{flex-wrap: wrap;}
+}
+@media (max-width: 923px){
+    .card__img{flex-basis: 45%;}
+}
+@media (max-width: 800px){
+    h1{font-size: 30px;}
+    p,a{font-size: 17px;}
+    .container{width: 90%;}
+    .card__img{flex-basis: 44%;}
+    .card__content img {width: 100%;}
+}
+@media (max-width: 740px){
+    .card__img{flex-basis: 43%;}
+}
+@media (max-width: 650px){
+    .card__formula{width: 75%;}
+    .button__adapter{flex-wrap: wrap;}
+    .button__preview {text-align: center;}
+    .button__next{
+        text-align: center;
+        padding: 0 0 80px 0;
+    }
+}
+@media (max-width: 635px){
+    .card__img{flex-basis: 42%;}
+}
+@media (max-width: 555px){
+    .card__img{flex-basis: 90%;}
+}
+@media (max-width: 457px){
+    h1{font-size: 20px;}
+    p,a{font-size: 15px;}
+}
+
+
+
